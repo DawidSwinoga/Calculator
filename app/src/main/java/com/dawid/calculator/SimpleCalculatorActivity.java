@@ -8,6 +8,7 @@ import android.widget.Button;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class SimpleCalculatorActivity extends AppCompatActivity {
 
@@ -40,5 +41,55 @@ public class SimpleCalculatorActivity extends AppCompatActivity {
             numberPadButton.setLayoutParams(params);
             numberPadGrid.addView(numberPadButton);
         }
+    }
+
+    @OnClick(R.id.bksp)
+    void onBkspClicked() {
+
+    }
+
+    @OnClick(R.id.clear_display)
+    void onClearDisplayClicked() {
+
+    }
+
+    @OnClick(R.id.change_sign)
+    void onChangeSignClicked() {
+
+    }
+
+    @OnClick(R.id.division)
+    void onDivisionClicked() {
+
+    }
+
+    @OnClick(R.id.multiplication)
+    void onMultiplicationClicked() {
+
+    }
+
+    @OnClick(R.id.subtraction)
+    void onSubtractionClicked() {
+
+    }
+
+    @OnClick(R.id.zero)
+    void onZeroClicked() {
+
+    }
+
+    @OnClick(R.id.separated_button)
+    void onSeparatedButtonClicked() {
+
+    }
+
+    @OnClick(R.id.equals)
+    void onEqualsClicked() {
+
+    }
+
+    @OnClick(R.id.addition)
+    void onAdditionClicked() {
+
     }
 }
