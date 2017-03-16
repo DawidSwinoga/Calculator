@@ -20,75 +20,85 @@
         app:rowCount="5">
 
         <Button
+            android:id="@+id/bksp"
             app:layout_column="0"
             app:layout_columnWeight="1"
             app:layout_row="0"
             app:layout_rowWeight="1"
-            android:text="Bksp" />
+            android:text="@string/bksp" />
 
         <Button
+            android:id="@+id/clear_display"
             app:layout_column="1"
             app:layout_columnSpan="2"
             app:layout_columnWeight="1"
             app:layout_row="0"
             app:layout_rowWeight="1"
-            android:text="C" />
+            android:text="@string/clear" />
 
         <Button
+            android:id="@+id/change_sign"
             app:layout_column="3"
             app:layout_columnWeight="1"
             app:layout_row="0"
             app:layout_rowWeight="1"
-            android:text="+/-" />
+            android:text="@string/change_sign_sign" />
 
         <Button
+            android:id="@+id/division"
             app:layout_column="3"
             app:layout_columnWeight="1"
             app:layout_row="1"
             app:layout_rowWeight="1"
-            android:text="/" />
+            android:text="@string/division" />
 
         <Button
+            android:id="@+id/multiplication"
             app:layout_column="3"
             app:layout_columnWeight="1"
             app:layout_row="2"
             app:layout_rowWeight="1"
-            android:text="*" />
+            android:text="@string/multiplication" />
 
         <Button
+            android:id="@+id/subtraction"
             app:layout_column="3"
             app:layout_columnWeight="1"
             app:layout_row="3"
             app:layout_rowWeight="1"
-            android:text="-" />
+            android:text="@string/subtraction" />
 
         <Button
+            android:id="@+id/zero"
             app:layout_column="0"
             app:layout_columnWeight="1"
             app:layout_row="4"
             app:layout_rowWeight="1"
-            android:text="0" />
+            android:text="@string/_0" />
 
         <Button
+            android:id="@+id/separated_button"
             app:layout_column="1"
             app:layout_columnWeight="1"
             app:layout_row="4"
             app:layout_rowWeight="1"
-            android:text="." />
+            android:text="@string/separated_sign" />
 
         <Button
+            android:id="@+id/equals"
             app:layout_column="2"
             app:layout_columnWeight="1"
             app:layout_row="4"
             app:layout_rowWeight="1"
-            android:text="=" />
+            android:text="@string/equals_sign" />
 
         <Button
+            android:id="@+id/addition"
             app:layout_column="3"
             app:layout_columnWeight="1"
             app:layout_row="4"
             app:layout_rowWeight="1"
-            android:text="+" />
+            android:text="@string/addition_sign" />
 
         <android.support.v7.widget.GridLayout
             android:layout_height="wrap_content"
