@@ -11,4 +11,5 @@ public class OperationType {
     public static final String MULTIPLICATION = "*";
     public static final String SUBTRACTION = "-";
     public static final String ADDITION = "+";
+    public static final String SEPARATED_SIGN = ".";
 }
