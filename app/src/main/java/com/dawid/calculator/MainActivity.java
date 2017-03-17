@@ -27,4 +27,15 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AdvancedCalculatorActivity.class);
         startActivity(intent);
     }
+
+    @OnClick(R.id.about_activity_button)
+    void onAboutActivityClicked() {
+        Intent intent = new Intent(this, AboutActivity.class);
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.exit_button)
+    void onExitClicked() {
+        finish();
+    }
 }
