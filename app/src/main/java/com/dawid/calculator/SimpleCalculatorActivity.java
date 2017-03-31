@@ -32,12 +32,12 @@ public class SimpleCalculatorActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_simple_calculator);
+        setContentView(getLayoutId());
         ButterKnife.bind(this);
         initNumberPadGrid();
     }
 
-    private void initNumberPadGrid() {
+    public void initNumberPadGrid() {
         int[] numbers = {7, 8, 9, 4, 5, 6, 1, 2, 3};
 
         for (final int number : numbers) {
@@ -57,6 +57,10 @@ public class SimpleCalculatorActivity extends AppCompatActivity {
         }
     }
 
+    protected int getLayoutId() {
+        return R.layout.activity_simple_calculator;
+    }
+
     private void numberPadGridHandleEvent(int number) {
         if (DoubleParser.parse(lastSign) != null || lastSign.equals(OperationType.SEPARATED_SIGN)
                 || "".equals(lastSign)) {
@@ -64,7 +68,7 @@ public class SimpleCalculatorActivity extends AppCompatActivity {
             equation += number;
         } else {
             lastSign = String.valueOf(number);
-            equation = equation + " " + lastSign;
+            equation += lastSign;
         }
         display.setText(equation);
     }
@@ -73,12 +77,17 @@ public class SimpleCalculatorActivity extends AppCompatActivity {
     void onBkspClicked() {
         String[] tmp = equation.split(" ");
 
-        if(tmp.length > 0) {
+        if (tmp.length > 0) {
             String last = tmp[tmp.length - 1];
             if (isNumeric(last)) {
                 lastSign = last.substring(0, last.length() - 1);
                 equation = replaceLast(equation, last, lastSign);
                 equation = removeLastSignIfExist('-', equation);
+            } else {
+                equation = replaceLast(equation, " " + last, "");
+                if (tmp.length > 1) {
+                    lastSign = tmp[tmp.length - 2];
+                }
             }
         }
 
@@ -135,9 +144,9 @@ public class SimpleCalculatorActivity extends AppCompatActivity {
 
     @OnClick(R.id.equals)
     void onEqualsClicked() {
-        if (!lastSign.equals("")) {
+        if (!lastSign.equals("") && equation.length() >= 5) {
             if (!isNumeric(lastSign)) {
-                equation = replaceLast(equation, lastSign, "");
+//                equation = replaceLast(equation, " " + lastSign + " ", "");
             }
             try {
                 equation = "" + EquationResolver.resolve(Arrays.asList(equation.split(" ")));
@@ -167,7 +176,7 @@ public class SimpleCalculatorActivity extends AppCompatActivity {
     private void addOperator(String operator) {
         if (isNumeric(lastSign) || OperationType.SEPARATED_SIGN.equals(lastSign)) {
             lastSign = operator;
-            equation = equation + " " + lastSign;
+            equation = equation + " " + lastSign + " ";
         } else if (!"".equals(equation)) {
             equation = replaceLast(equation, lastSign, operator);
             lastSign = operator;

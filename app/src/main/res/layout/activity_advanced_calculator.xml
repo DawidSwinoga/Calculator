@@ -1,21 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.dawid.calculator.AdvancedCalculatorActivity">
+    android:layout_marginTop="@dimen/activity_vertical_margin"
+    tools:context="com.dawid.calculator.AdvancedCalculatorActivity"
+    android:orientation="vertical">
 
 
     <TextView
         android:id="@+id/display"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="@dimen/output_height"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:gravity="center_vertical"
+        android:textSize="@dimen/input_height" />
+
 
     <android.support.v7.widget.GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/display"
         android:layout_marginTop="@dimen/activity_horizontal_margin"
         app:columnCount="4"
         app:rowCount="7">
@@ -179,4 +185,4 @@
             app:rowCount="3" />
     </android.support.v7.widget.GridLayout>
 
-</RelativeLayout>
+</LinearLayout>

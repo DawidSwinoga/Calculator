@@ -6,37 +6,54 @@
     android:orientation="vertical"
     tools:context="com.dawid.calculator.MainActivity">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"/>
+        android:gravity="center"
+        android:layout_weight="1">
 
-    <Button
-        android:id="@+id/simple_activity_button"
-        android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/name_activity"
+            android:text="@string/app_name" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="@dimen/menu_buttons_size"
+        android:layout_gravity="center_horizontal"
         android:layout_height="wrap_content"
-        android:text="@string/simple"
-        android:textAllCaps="false" />
+        android:layout_weight="1"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/advanced_activity_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/advanced"
-        android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/about_activity_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/About"
-        android:textAllCaps="false" />
+        <Button
+            android:id="@+id/simple_activity_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/simple"
+            android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/exit_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/Exit"
-        android:textAllCaps="false" />
+        <Button
+            android:id="@+id/advanced_activity_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/advanced"
+            android:textAllCaps="false" />
 
+        <Button
+            android:id="@+id/about_activity_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/About"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/exit_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Exit"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
 </LinearLayout>
